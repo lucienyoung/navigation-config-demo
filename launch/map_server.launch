@@ -1,0 +1,8 @@
+<launch>
+    <!-- 设置地图的配置文件 -->
+    <arg name="map" default="nav.yaml" />
+    <!-- 运行地图服务器，并且加载设置的地图-->
+    <!--<node name="map_server" pkg="map_server" type="map_server" args="$(find map_server)/map/$(arg map)"/>-->
+    <!-- <node name="map_server" pkg="map_server" type="map_server" args="/home/lucien_young/VIP_NAV_catkin_ws/src/navigation/map_server/map/nav.yaml"/> -->
+    <node name="map_server" pkg="map_server" type="map_server" args="/home/lucien_young/ee_map.yaml"/>
+</launch>

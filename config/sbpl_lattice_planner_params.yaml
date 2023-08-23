@@ -1,0 +1,10 @@
+SBPLLatticePlanner:
+  environment_type: XYThetaLattice
+  planner_type: ADPlanner
+  allocated_time: 5.0
+  initial_epsilon: 3.0
+  forward_search: false
+  allow_unknown: false
+  nominalvel_mpersecs: 0.7
+  timetoturn45degsinplace_secs: 0.6
+  lethal_obstacle: 20

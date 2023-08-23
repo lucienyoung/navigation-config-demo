@@ -1,0 +1,33 @@
+<launch>
+
+   <!--<master auto="start"/>-->
+ <!-- Run the map server --> 
+    <!--<node name="map_server" pkg="map_server" type="map_server" args="/home/lucien_young/VIP_NAV_catkin_ws/src/navigation/map_server/map/nav.yaml"/>-->
+
+ <!--- Run AMCL --> 
+    <!--<include file="$(find amcl)/launch/amcl.launch" />-->
+
+   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" clear_params="true">
+
+    <rosparam file="$(find vip_nav)/config/move_base_params.yaml" command="load"/>
+
+    <rosparam file="$(find vip_nav)/config/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+    <rosparam file="$(find vip_nav)/config/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find vip_nav)/config/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find vip_nav)/config/global_costmap_params.yaml" command="load" /> 
+    <rosparam file="$(find vip_nav)/config/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find vip_nav)/config/global_planner_params.yaml" command="load"/>
+    
+    <!-- <rosparam file="$(find vip_nav)/config/sbpl_lattice_planner_params.yaml" command="load" /> -->
+    <!-- <param name="SBPLLatticePlanner/primitive_filename" value="$(find sbpl_lattice_planner)/matlab/mprim/pr1_with_resolution01.mprim" />  -->
+    
+    <param name="controller_frequency" value="5.0"/> 
+    <param name="controller_patiente" value="5.0"/>
+
+    <remap from="odom" to ="/pose_graph/global_camera_odom_2d" />
+
+   </node>
+
+   <include file="$(find vip_nav)/launch/depth_to_laser.launch"/>
+
+</launch> 
