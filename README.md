@@ -3,7 +3,7 @@ The example of ros-navigation config file. The relavant parameter details can be
 ## How to install ros-navigation
 Take the ROS Melodic as an example.
 ```
-//install dependencies
+<!--install dependencies--/>
 sudo apt install ros-melodic-navigation*
 sudo apt remove ros-melodic-navigation
 
