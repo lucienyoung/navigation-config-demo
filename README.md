@@ -1,5 +1,5 @@
 # navigation-config-demo
-The example of ros-navigation config file. The relavant parameter details can be found at [ros-navigation wiki](http://wiki.ros.org/navigation).
+This is an example of ros-navigation config file. The relavant parameter details can be found at [ros-navigation wiki](http://wiki.ros.org/navigation).
 ## How to install ros-navigation
 Take the ROS Melodic as an example.
 ```
